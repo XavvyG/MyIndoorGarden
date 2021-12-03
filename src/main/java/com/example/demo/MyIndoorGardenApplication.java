@@ -9,5 +9,4 @@ public class MyIndoorGardenApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MyIndoorGardenApplication.class, args);
 	}
-
 }
