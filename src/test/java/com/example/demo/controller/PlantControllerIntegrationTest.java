@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -34,13 +35,12 @@ public class PlantControllerIntegrationTest {
 	@Autowired
 	private ObjectMapper mapper;
 
-	@Test //Test for Feature-Create
+	@Test // Test for Feature-Create
 	void createPlantTest() throws Exception {
-		String testPlantAsJson = this.mapper.writeValueAsString(
-				new Plant(null, "Sansevieria", 2, "yellow-green", "Congo", 14));
-		String testPlantAsJsonResponse = this.mapper.writeValueAsString(
-				new Plant(3, "Sansevieria", 2, "yellow-green", "Congo", 14)
-		);
+		String testPlantAsJson = this.mapper
+				.writeValueAsString(new Plant(null, "Sansevieria", 2, "yellow-green", "Congo", 14));
+		String testPlantAsJsonResponse = this.mapper
+				.writeValueAsString(new Plant(3, "Sansevieria", 2, "yellow-green", "Congo", 14));
 
 		RequestBuilder request = post("/plant/add").contentType(MediaType.APPLICATION_JSON).content(testPlantAsJson);
 		ResultMatcher status = status().isCreated();
@@ -49,11 +49,10 @@ public class PlantControllerIntegrationTest {
 		this.mvc.perform(request).andExpect(status).andExpect(content);
 	}
 
-	@Test //Test for Feature-Get-All
+	@Test // Test for Feature-Get-All
 	void getAllPlantsTest() throws Exception {
 		String listOfPlantsAsJSON = this.mapper
-				.writeValueAsString(List.of(
-						new Plant(1, "Sedum Morganianum", 2, "light green", "Mexico", 10),
+				.writeValueAsString(List.of(new Plant(1, "Sedum Morganianum", 2, "light green", "Mexico", 10),
 						new Plant(2, "Monstera deliciosa", 1, "green", "Panama", 10)));
 
 		RequestBuilder request = get("/plant/all");
@@ -62,11 +61,11 @@ public class PlantControllerIntegrationTest {
 
 		this.mvc.perform(request).andExpect(status).andExpect(content);
 	}
-	
-	@Test //Test for Read Car by ID
+
+	@Test // Test for Read Car by ID
 	void getPlantByIDTest() throws Exception {
-		String testPlantAsJson = this.mapper.writeValueAsString(
-				new Plant(1, "Sedum Morganianum", 2, "light green", "Mexico", 10));
+		String testPlantAsJson = this.mapper
+				.writeValueAsString(new Plant(1, "Sedum Morganianum", 2, "light green", "Mexico", 10));
 
 		RequestBuilder request = get("/plant/1");
 		ResultMatcher status = status().isFound();
@@ -75,11 +74,10 @@ public class PlantControllerIntegrationTest {
 		this.mvc.perform(request).andExpect(status).andExpect(content);
 	}
 
-	@Test //Test for Update
+	@Test // Test for Update
 	void updatePlantTest() throws Exception {
-		String testPlantAsJson = this.mapper.writeValueAsString(
-				new Plant(1, "Sedum Morganianum", 5, "light green", "Mexico", 10)
-		);
+		String testPlantAsJson = this.mapper
+				.writeValueAsString(new Plant(1, "Sedum Morganianum", 5, "light green", "Mexico", 10));
 
 		RequestBuilder request = put("/plant/edit/1").contentType(MediaType.APPLICATION_JSON).content(testPlantAsJson);
 		ResultMatcher status = status().isAccepted();
@@ -88,6 +86,12 @@ public class PlantControllerIntegrationTest {
 		this.mvc.perform(request).andExpect(status).andExpect(content);
 	}
 
-	
-	
+	@Test // Test for Delete
+	void deletePlantTest() throws Exception {
+		RequestBuilder request = delete("/plant/delete/2");
+		ResultMatcher status = status().isOk();
+
+		this.mvc.perform(request).andExpect(status);
+	}
+
 }
