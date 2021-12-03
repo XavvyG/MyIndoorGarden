@@ -9,9 +9,9 @@ insert into plant
 values
 (
    'Sedum Morganianum',
-   3,
+   2,
    'light green',
-   'Mexico ',
+   'Mexico',
    10
 );
 insert into plant
@@ -27,6 +27,6 @@ values
    'Monstera deliciosa',
    1,
    'green',
-   'Panama ',
+   'Panama',
    10
 );
