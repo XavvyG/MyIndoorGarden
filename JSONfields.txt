@@ -1,0 +1,9 @@
+Random JSON
+
+{
+"name": "{{$randomWord}}",
+"quantity": "{{$randomInt}}",
+"colour": "{{$randomColor}}",
+"countryOfOrigin": "{{$randomCountry}}",
+"wateringFrequency": 7
+}
