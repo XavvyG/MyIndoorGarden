@@ -93,5 +93,4 @@ public class PlantControllerIntegrationTest {
 
 		this.mvc.perform(request).andExpect(status);
 	}
-
 }
