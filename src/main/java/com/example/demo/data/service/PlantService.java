@@ -44,5 +44,12 @@ public class PlantService {
 		editPlant.setWateringFrequency(plant.getWateringFrequency());
 		return this.repo.save(editPlant);
 	}
+
+	// IG-5 Feature-Delete Plant method
+	public boolean deletePlant(Integer id) {
+		this.repo.deleteById(id);
+		boolean checkId = this.repo.existsById(id);
+		return !checkId; //true
+	}
 	
 }
