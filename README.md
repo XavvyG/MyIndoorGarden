@@ -1,6 +1,5 @@
-#MyIndoorGarden
+#MyIndoorGarden Objective
 
-#Objective
 To create a Spring Boot API, with utilisation of supporting tools, methodologies, and technologies, that encapsulates all fundamental and practical modules covered during training in QA Bootcamp.
 
 #Why are we doing this?
