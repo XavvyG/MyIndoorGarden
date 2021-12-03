@@ -18,6 +18,8 @@ import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultMatcher;
+
+import com.example.demo.data.model.Car;
 import com.example.demo.data.model.Plant;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -51,7 +53,7 @@ public class PlantControllerIntegrationTest {
 	void getAllPlantsTest() throws Exception {
 		String listOfPlantsAsJSON = this.mapper
 				.writeValueAsString(List.of(
-						new Plant(1, "Sedum Morganianum", 2, "light greenn", "Mexico", 10),
+						new Plant(1, "Sedum Morganianum", 2, "light green", "Mexico", 10),
 						new Plant(2, "Monstera deliciosa", 1, "green", "Panama", 10)));
 
 		RequestBuilder request = get("/plant/all");
@@ -60,5 +62,16 @@ public class PlantControllerIntegrationTest {
 
 		this.mvc.perform(request).andExpect(status).andExpect(content);
 	}
+	
+	@Test //Test for Read Car by ID
+	void getPlantByIDTest() throws Exception {
+		String testPlantAsJson = this.mapper.writeValueAsString(
+				new Plant(1, "Sedum Morganianum", 2, "light green", "Mexico", 10));
 
+		RequestBuilder request = get("/plant/1");
+		ResultMatcher status = status().isFound();
+		ResultMatcher content = content().json(testPlantAsJson);
+
+		this.mvc.perform(request).andExpect(status).andExpect(content);
+	}
 }
