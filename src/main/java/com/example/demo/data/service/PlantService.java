@@ -1,8 +1,11 @@
 package com.example.demo.data.service;
 
+import org.springframework.stereotype.Service;
+
 import com.example.demo.data.model.Plant;
 import com.example.demo.data.repository.PlantRepo;
 
+@Service
 public class PlantService {
 
 	private PlantRepo repo;
