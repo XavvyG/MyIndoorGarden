@@ -33,4 +33,16 @@ public class PlantService {
 		return findPlant.get();
 	}
 
+	// IG-4 Feature-Edit Plant method
+	public Plant editPlant(Plant plant, Integer id) {
+		Optional<Plant> findPlant = this.repo.findById(id);
+		Plant editPlant = findPlant.get();
+		editPlant.setName(plant.getName());
+		editPlant.setQuantity(plant.getQuantity());
+		editPlant.setColour(plant.getColour());
+		editPlant.setCountryOfOrigin(plant.getCountryOfOrigin());
+		editPlant.setWateringFrequency(plant.getWateringFrequency());
+		return this.repo.save(editPlant);
+	}
+	
 }
