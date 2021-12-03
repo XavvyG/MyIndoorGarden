@@ -1,8 +1,11 @@
 package com.example.demo.controller;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +18,6 @@ import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultMatcher;
-
 import com.example.demo.data.model.Plant;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -41,6 +43,20 @@ public class PlantControllerIntegrationTest {
 		RequestBuilder request = post("/plant/add").contentType(MediaType.APPLICATION_JSON).content(testPlantAsJson);
 		ResultMatcher status = status().isCreated();
 		ResultMatcher content = content().json(testPlantAsJsonResponse);
+
+		this.mvc.perform(request).andExpect(status).andExpect(content);
+	}
+
+	@Test //Test for Feature-Get-All
+	void getAllPlantsTest() throws Exception {
+		String listOfPlantsAsJSON = this.mapper
+				.writeValueAsString(List.of(
+						new Plant(1, "Sedum Morganianum", 2, "light greenn", "Mexico", 10),
+						new Plant(2, "Monstera deliciosa", 1, "green", "Panama", 10)));
+
+		RequestBuilder request = get("/plant/all");
+		ResultMatcher status = status().isOk();
+		ResultMatcher content = content().json(listOfPlantsAsJSON);
 
 		this.mvc.perform(request).andExpect(status).andExpect(content);
 	}
