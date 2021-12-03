@@ -18,8 +18,6 @@ import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultMatcher;
-
-import com.example.demo.data.model.Car;
 import com.example.demo.data.model.Plant;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
