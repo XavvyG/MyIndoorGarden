@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,4 +44,9 @@ public class PlantController {
 		return new ResponseEntity<Plant>(this.service.getPlantById(id), HttpStatus.FOUND);
 	}
 
+	// Feature-Edit control
+	@PutMapping("/edit/{id}")
+	public ResponseEntity<Plant> editPlant(@RequestBody Plant plant, @PathVariable Integer id) {
+		return new ResponseEntity<Plant>(this.service.editPlant(plant, id), HttpStatus.ACCEPTED);
+	}
 }
