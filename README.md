@@ -13,6 +13,7 @@ MyIndoorGarden application is designed to:
 - set reminder to water your plants (watering frequency set in number of days)
 
 #How I expected the challenge to go.
+
 I expect this task to be fun yet challenging. 
 This is a task that gives us a glimpse of how it is like be a software developer in the industry.
 
