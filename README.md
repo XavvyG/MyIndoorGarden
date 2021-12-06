@@ -6,13 +6,15 @@ To create a Spring Boot API, with utilisation of supporting tools, methodologies
 
 Indoor plants have become more popular recently.
 For aesthetic reasons or not, they are natural humidifiers to improve air quality indoors. 
-They can also help improve one's mental health and well-being. 
+They can also help improve one's mental health and well-being.
+
 MyIndoorGarden application is designed to:
 - be a functional database for your indoor plants (Create, Read, Update and Delete data)
 - provide information of your indoor plants (Country of origin, number of plants, plant name)
 - set reminder to water your plants (watering frequency set in number of days)
 
 #How I expected the challenge to go.
+
 I expect this task to be fun yet challenging. 
 This is a task that gives us a glimpse of how it is like be a software developer in the industry.
 
