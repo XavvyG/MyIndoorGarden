@@ -48,7 +48,20 @@ For ease of development: (JSONFields.txt file is available to use in root folder
 
 ### Screenshots of your database to prove that data is being persisted.
 
-Link: https://imgur.com/a/UIfsQPN
+#### 1.) Feature Create:
+![Database Result](https://i.imgur.com/adplomb.png)
+
+#### 2.) Feature Get All:
+![Database Result](https://i.imgur.com/Qyf2XYp.png)
+
+#### 3.) Feature Get by ID:
+![Database Result](https://i.imgur.com/O11p86A.png)
+
+#### 4.) Feature Edit:
+![Database Result](https://i.imgur.com/XJDh1Qb.png)
+
+#### 5.) Feature Delete by ID:
+![Database Result](https://i.imgur.com/XTvVjcw.png)
 
 ### Screenshot of your test results, including coverage report.
 
