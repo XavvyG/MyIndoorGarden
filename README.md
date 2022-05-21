@@ -1,7 +1,9 @@
-# MyIndoorGarden
+<img src="https://assets.cloudacademy.com/manual_uploaded/transactional-emails/qa/logo.svg" alt="QA Logo" width="200"/>
 
+# MyIndoorGarden
 To create a Spring Boot API, with utilisation of supporting tools, methodologies, and technologies, that encapsulates all fundamental and practical modules covered during training in QA Bootcamp.
 
+---
 ### Why are we doing this?
 
 Indoor plants have become more popular recently.
@@ -35,10 +37,10 @@ Could have: I could have done more of the stretch goals but due to unforeseen ci
 Link: https://imgur.com/a/UIfsQPN
 
 For ease of development: (JSONFields.txt file is available to use in root folder)
-- I have used $randomWord for my plant name
-- I have used $randomInt for plant quantity
-- I have used $randomColour for plant colour
-- I have used $randomCountry for plant countryOfOrigin
+- I have used `$randomWord` for my plant name
+- I have used `$randomInt` for plant quantity
+- I have used `$randomColour` for plant colour
+- I have used `$randomCountry` for plant countryOfOrigin
 - I have set wateringFrequency as 7 days default
 
 ### Screenshots of your database to prove that data is being persisted.
