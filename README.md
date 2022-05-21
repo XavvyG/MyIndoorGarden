@@ -41,7 +41,7 @@ For ease of development: (JSONFields.txt file is available to use in root folder
 - I have used `$randomInt` for plant quantity
 - I have used `$randomColour` for plant colour
 - I have used `$randomCountry` for plant countryOfOrigin
-- I have set wateringFrequency as 7 days default
+- I have set `wateringFrequency` as 7 days default
 
 ### Screenshots of your database to prove that data is being persisted.
 
