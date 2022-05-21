@@ -52,7 +52,7 @@ Link: https://imgur.com/a/UIfsQPN
 
 ### Screenshot of your test results, including coverage report.
 
-Link: https://imgur.com/AV6TXw0
+![Test Result](https://i.imgur.com/AV6TXw0.png)
 
 #### Link to Jira Board - You must add Richard as collaborators on your Jira board.
 
