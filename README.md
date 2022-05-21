@@ -14,9 +14,9 @@ For aesthetic reasons or not, they are natural humidifiers to improve air qualit
 They can also help improve one's mental health and well-being.
 
 MyIndoorGarden application is designed to:
-- be a functional database for your indoor plants (Create, Read, Update and Delete data)
-- provide information of your indoor plants (Country of origin, number of plants, plant name)
-- set reminder to water your plants (watering frequency set in number of days)
+- be a functional database for your indoor plants (`Create`, `Read`, `Update` and `Delete` data)
+- provide information of your indoor plants (`Country of origin`, `number of plants`, `plant name`)
+- set reminder to water your plants (`watering frequency` set in number of days)
 
 ### How I expected the challenge to go.
 
@@ -30,7 +30,7 @@ Success: Jira planning board, the h2 database integration data persistence, gith
 Could have: I could have done more of the stretch goals but due to unforeseen circumstance, I have partially encountered risk#2 in my risk assessment.
 
 ### Possible improvements for future revisions of the project.
-- SOLID principle could be applied, I have repeated some codes in the test file and in the controller file.
+- `SOLID` principle could be applied, I have repeated some codes in the test file and in the controller file.
 - Some of the stretch goals could be attained.
 - Realising that eclipse/spring doesn't automatically refresh files when pushed/pulled from gitHub.
 - Should have understood the feature branching a lot sooner
